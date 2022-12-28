@@ -1,0 +1,20 @@
+.home-banner { 
+    background: url('/img/home-intro-bg.png') 
+    no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    padding-top: 270px;
+    padding-bottom: 180px;
+}
+
+.img {
+    max-height: 120px;
+}
+
+@media(max-width: 768px){
+    .img {
+        max-height: none;
+    }
+}
