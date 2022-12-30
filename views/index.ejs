@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <%- include('layouts/header') -%>
+  <body>
+    <%- include('layouts/navBar') -%>
+
+      <div class="home-banner">
+        <div class="container">
+            <div class="text-end" itemscope itemprop="Shopping With Us">
+                <h1>Shop With Us!</h1>
+                <h3>Discounts Available Daily</h3>
+                <a href="#" class="btn btn-primary">Get Started</a>
+            </div>
+        </div>
+      </div>
+
+      <main itemid="features">
+        <div class="container my-5 py-5">
+
+            <!-- features -->
+            <h2 class="display-4 text-center fw-bold mb-3">Our Seasonal Catalog Is Updated!!!</h2>
+            <%- include('components/home-features') -%>
+            <!-- features -->
+
+            <!-- content -->
+            <%- include('components/home-carousel') -%>
+            <!-- content -->
+            
+            <!-- blogs -->
+            <%- include('components/home-blogs') -%>
+            <!-- blogs -->
+        </div>
+      </main>
+
+    <%- include('layouts/footer') -%>
+
+    <%- include('layouts/scripts') -%>
+  </body>
+</html>

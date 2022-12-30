@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <%- include('layouts/header') -%>
+  <body>
+    <%- include('layouts/navBar') -%>
+
+      <main class="container my-5 py-5 text-center">
+          <h1 class="mb-3 fw-bold display-4">Contact Us</h1>
+          <form method="post" netlify name="contact">
+              <label for="name" class="form-label">Your Name</label> <br>
+              <input type="text" class="form-control mb-3" name="name" id="name"> <br>
+              <label for="email" class="form-label">Your Email</label> <br>
+              <input type="email" class="form-control mb-3" name="email" id="email"> <br>
+              <label for="message" class="form-label">Your Message</label><br>
+              <textarea name="message" class="form-control mb-3" name="message" id="message" rows="7"></textarea>
+              <br>
+              <button type="submit" class="btn btn-primary form-control">send</button>
+          </form>
+      </main>
+
+    <%- include('layouts/footer') -%>
+
+    <%- include('layouts/scripts') -%>
+  </body>
+</html>

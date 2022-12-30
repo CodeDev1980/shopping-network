@@ -13,7 +13,7 @@ require('dotenv').config()
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
-app.set('views', path.join(__dirnam, 'views'));
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
@@ -36,7 +36,7 @@ mongoose.connect(process.env.DB_URL, {
 });
 
 if(mongoose){
-    ocnsole.log('DB is connected!!!!')
+    console.log('DB is connected!!!!')
 } else {
     console.log('No DB connection')
 }
