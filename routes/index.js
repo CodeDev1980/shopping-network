@@ -49,6 +49,5 @@ router.get('/delete/:id', deletePostController);
 router.get('/createReview', newReviewController);
 router.post('/store/review', storeReviewController);
 router.get('/reviews', reviewsController);
-router.get('/deleteReview/:id', deleteReviewController);
 
 module.exports = router
