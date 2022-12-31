@@ -1,0 +1,26 @@
+<style>
+    .max-image {
+        max-height: 150px;
+    }
+    @media(max-width: 768px){
+        .max-image {
+        max-height: none;
+    }
+    }
+</style>
+
+<div class="container my-5">
+    <div class="row row-cols-lg-auto d-flex mx-auto justify-content-center align-items-center text-center me-2">
+        <% for(i=0; i < articles.length; i++){ %>
+            <div class="card p-3 m-2" style="max-width: 19rem;">
+                <h3><%= articles[i].title %></h3>
+                <a href="/post/<%= articles[i]._id %>">
+                    <img src="<%= articles[i].image %>" class="img-thumbnail max-image" alt="<%= articles[i].title %>">
+                </a>
+                <p class="text-muted">
+                    Posted On <%= articles[i].datePosted.toLocaleString() %> By <%= articles[i].userid.username %>
+                </p>
+            </div>
+        <% } %>
+    </div>
+</div>

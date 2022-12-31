@@ -13,10 +13,6 @@ const UserSchema = new Schema({
         type: String,
         required: [true, 'Please provide a password']
     },
-    about: {
-        type: String,
-        required: [true, 'Please talk about yourself']
-    },
     dateJoined: {
         type: Date,
         default: new Date

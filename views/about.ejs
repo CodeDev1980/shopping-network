@@ -1,22 +1,36 @@
 <!doctype html>
 <html lang="en">
   <%- include('layouts/header') -%>
+  <style>
+      .icon {
+          font-size: 40px;
+          margin: 7px;
+      }
+  </style>
   <body>
     <%- include('layouts/navBar') -%>
 
-      <main>
-          <div class="container my-5 py-5">
+      <main style="margin-top: 140px; margin-bottom: 70px;">
+          <div class="container">
               <h1 class="text-center fw-bold display-3 mb-3">About Us</h1>
               <div class="row">
                   <div class="col-md-6 p-3">
-                      <h3>Summary Title</h3>
-                      <p>
+                      <h3>Our Express Story</h3>
+                      <p class="lead">
                           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste possimus veritatis quidem laborum quo, eveniet eligendi tempore porro, voluptatum corporis repellat ipsa hic. Sed similique, pariatur impedit alias natus ipsam!
+                          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda corporis delectus eum facere fugit libero non sunt? Ab culpa dignissimos et exercitationem iste repellendus saepe. Debitis ea est molestiae quisquam.
                       </p>
+                      <div class="row mt-4">
+                          <div class="col-md-12">
+                              <i class="fa-brands icon fa-html5"></i> <i class="fa-brands icon fa-js"></i>
+                              <i class="fa-brands icon fa-css3-alt"></i> <i class="fa-brands icon fa-node"></i>
+                          </div>
+                      </div>
                   </div>
                   <div class="col-md-6 p-3">
                       <img class="img-fluid" src="https://images.unsplash.com/photo-1531545514256-b1400bc00f31?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80" alt="img" />
                   </div>
+
               </div>
           </div>
       </main>

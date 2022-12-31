@@ -8,25 +8,25 @@
           <div class="container my-5 py-3">
               <h1 class="text-center fw-bold display-1 mb-3">Express Blogs Page</h1>
               <div class="row row-cols-lg-auto mx-auto d-flex justify-content-center align-items-center py-2 me-1">
-                  <% for(i=0; i < articles.length; i++) { %>
-                  <div class="col-md-4 p-2" style="max-width: 20rem;">
-                      <img src="<%= articles[i].image %>" class="img-thumbnail" alt="<%= articles[i].title %>" />
-                  </div>
-                  <div class="col-md-8 p-2">
-                      <h3 class="fw-bold"><%= articles[i].title %></h3>
-                      <p>
-                          <%= articles[i].body.substring(0, 110) %> . . .
-                      </p>
-                      <p>Posted On <%= articles[i].datePosted.toLocaleString() %>,
-                          By <%= articles[i].userid.username %> <br>
-                          <a href="/post/<%= articles[i]._id %>" class="btn btn-outline-info">Read More</a>
-                          <% if(loggedIn){ %>
-                              <a href="/delete/<%= articles[i]._id %>" class="btn btn-outline-warning">Delete Post</a>
-                          <% } %>
-                      </p>
-                  </div>
-                  <% } %>
-              </div>
+                <% for(i=0; i < articles.length; i++) { %>
+                    <div class="col-md-4 p-2" style="max-width: 20rem;">
+                        <img src="<%= articles[i].image %>" class="img-thumbnail" alt="<%= articles[i].title %>" />
+                    </div>
+                    <div class="col-md-8 p-2">
+                        <h3 class="fw-bold"><%= articles[i].title %></h3>
+                        <p>
+                            <%= articles[i].body.substring(0, 110) %> . . .
+                        </p>
+                        <p>Posted On <%= articles[i].datePosted.toLocaleString() %>,
+                            By <%= articles[i].userid.username %> <br>
+                            <a href="/post/<%= articles[i]._id %>" class="btn btn-outline-info">Read More</a>
+                            <% if(loggedIn){ %>
+                                <a href="/delete/<%= articles[i]._id %>" class="btn btn-outline-warning">Delete Post</a>
+                            <% } %>
+                        </p>
+                    </div>
+                <% } %>
+            </div>
           </div>
       </main>
 

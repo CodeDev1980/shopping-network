@@ -4,19 +4,50 @@
   <body>
     <%- include('layouts/navBar') -%>
 
-      <main class="container my-5 py-5 text-center">
-          <h1 class="mb-3 fw-bold display-4">Contact Us</h1>
-          <form method="post" netlify name="contact">
-              <label for="name" class="form-label">Your Name</label> <br>
-              <input type="text" class="form-control mb-3" name="name" id="name"> <br>
-              <label for="email" class="form-label">Your Email</label> <br>
-              <input type="email" class="form-control mb-3" name="email" id="email"> <br>
-              <label for="message" class="form-label">Your Message</label><br>
-              <textarea name="message" class="form-control mb-3" name="message" id="message" rows="7"></textarea>
-              <br>
-              <button type="submit" class="btn btn-primary form-control">send</button>
-          </form>
-      </main>
+    <div class="container" style="margin-top: 140px; margin-bottom: 70px;">
+        <form id="contactForm" data-sb-form-api-token="cdd97a4e-dcf9-4313-857e-db93e0d5cdd0">
+            <div class="form-floating mb-3">
+                <input class="form-control" id="emailAddress" type="email" placeholder="Email Address" data-sb-validations="required,email" />
+                <label for="emailAddress">Email Address</label>
+                <div class="invalid-feedback" data-sb-feedback="emailAddress:required">Email Address is required.</div>
+                <div class="invalid-feedback" data-sb-feedback="emailAddress:email">Email Address Email is not valid.</div>
+            </div>
+            <div class="form-floating mb-3">
+                <input class="form-control" id="name" type="text" placeholder="Name" data-sb-validations="required" />
+                <label for="name">Name</label>
+                <div class="invalid-feedback" data-sb-feedback="name:required">Name is required.</div>
+            </div>
+            <div class="form-floating mb-3">
+                <select class="form-select" id="howDidYouHearAboutUs" aria-label="How Did You Hear About Us?">
+                    <option value="Referral">Referral</option>
+                    <option value="Tv">Tv</option>
+                    <option value="Drove By">Drove By</option>
+                    <option value="Radio">Radio</option>
+                    <option value="Through Work">Through Work</option>
+                </select>
+                <label for="howDidYouHearAboutUs">How Did You Hear About Us?</label>
+            </div>
+            <div class="form-floating mb-3">
+                <textarea class="form-control" id="message" type="text" placeholder="Message" style="height: 10rem;" data-sb-validations="required"></textarea>
+                <label for="message">Message</label>
+                <div class="invalid-feedback" data-sb-feedback="message:required">Message is required.</div>
+            </div>
+            <div class="d-none" id="submitSuccessMessage">
+                <div class="text-center mb-3">
+                    <div class="fw-bolder">Form submission successful!</div>
+                    <p>To activate this form, sign up at</p>
+                    <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                </div>
+            </div>
+            <div class="d-none" id="submitErrorMessage">
+                <div class="text-center text-danger mb-3">Error sending message!</div>
+            </div>
+            <div class="d-grid">
+                <button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 
     <%- include('layouts/footer') -%>
 
