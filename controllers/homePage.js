@@ -1,6 +1,6 @@
 // DB Feed
 const BlogPost = require('../models/BlogPost');
-const ReviewsPost = required('../models/Reviews.js');
+const ReviewsPost = require('../models/Reviews');
 
 module.exports = async (req, res) => {
     const articles = await BlogPost.find({}).limit(3).sort({_id: -1}).populate("userid");

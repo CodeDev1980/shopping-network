@@ -8,5 +8,8 @@ module.exports = (req, res) => {
             req.flash('data', req.body)
             return res.redirect('/register')
         }
+        else {
+            return res.redirect('/login')
+        }
     })
 }

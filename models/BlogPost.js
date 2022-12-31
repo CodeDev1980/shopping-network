@@ -1,4 +1,4 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const BlogPostSchema = new Schema ({
@@ -7,7 +7,7 @@ const BlogPostSchema = new Schema ({
     image: String,
     userid: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'user',
+        ref: 'User',
         required: true
     },
     datePosted: {
@@ -16,5 +16,5 @@ const BlogPostSchema = new Schema ({
     }
 })
 
-const BlogPost = mongoose.model('BlogPost', BlogPostSchema);
-module.exports = BlogPost;
+const BlogPost = mongoose.model('BlogPost', BlogPostSchema)
+module.exports = BlogPost

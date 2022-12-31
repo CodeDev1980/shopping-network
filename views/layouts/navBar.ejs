@@ -21,7 +21,7 @@
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <li><a class="dropdown-item" href="/about">About</a></li>
               <li><a class="dropdown-item" href="/contact">Contact</a></li>
-              <li><a class="dropdown-item" href="#">Support</a></li>
+              <li><a class="dropdown-item" href="/blogs">Blogs</a></li>
             </ul>
           </li>
         </ul>
@@ -35,9 +35,23 @@
               <a href="#" class="text-dark m-2">
                 <i class="fa-brands fa-square-twitter"></i>
               </a>
-              <a href="#" class="text-dark m-2">
-                <i class="fa-solid fa-cart-shopping"></i>
+              <% if(!loggedIn){ %>
+              <a href="/login" class="text-dark m-2">
+                <i class="fa-solid fa-right-to-bracket"></i>
               </a>
+              <% } %>
+              <% if(loggedIn){ %>
+                <div class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fa-regular fa-user"></i>
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <li><a class="dropdown-item" href="/create">New Post</a></li>
+                    <li><a class="dropdown-item" href="/profile">My Profile</a></li>
+                    <li><a class="dropdown-item" href="/logout">Logout</a></li>
+                  </ul>
+                </div>
+              <% } %>
               <!-- shopping bag -->
             <div class="ec-cart-widget"></div>
             <div>

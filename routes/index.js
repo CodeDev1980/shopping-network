@@ -22,32 +22,31 @@ const deletePostController = require('../controllers/deletePost');
 const newReviewController = require('../controllers/createReview');
 const storeReviewController = require('../controllers/StoreReview');
 const reviewsController = require('../controllers/reviewsPage');
-const deleteReviewController = require('../controllers/deleteReview');
 // middleware
-const validateMiddleWare = require('../middleware/validate');
+const validateMiddleWare = require('../middleware/validateForm');
 const authMiddleWare = require('../middleware/authorized');
 const redirect = require('../middleware/redirectIfUser');
 
 // main pages
-router.get('/', homeController);
-router.get('/about', aboutController);
-router.get('/contact', contactController);
-router.get('/catalog', catalogController);
+router.get('/', homeController); //
+router.get('/about', aboutController); //
+router.get('/contact', contactController); //
+router.get('/catalog', catalogController); //
 // User pages
-router.get('/register', redirect, registerController);
-router.post('/store/user', storeUserController);
-router.get('/login', redirect, loginController);
-router.post('/login/user', loginUserController);
-router.get('/logout', logoutController);
+router.get('/register', registerController); //
+router.post('/store/user', storeUserController); //
+router.get('/login', redirect, loginController); //
+router.post('/login/user', loginUserController); //
+router.get('/logout', logoutController); 
 // blog pages
-router.get('/create', authMiddleWare, newPostController);
-router.post('/store/post', validateMiddleWare, storePostController);
-router.get('/blogs', blogsController);
-router.get('/post/:id', postController);
-router.get('/delete/:id', deletePostController);
+router.get('/create', authMiddleWare, newPostController); //
+router.post('/store/post', validateMiddleWare, storePostController); //
+router.get('/blogs', blogsController); //
+router.get('/post/:id', postController); //
+router.get('/delete/:id', authMiddleWare, deletePostController); //
 // reviews routes
-router.get('/createReview', newReviewController);
-router.post('/store/review', storeReviewController);
-router.get('/reviews', reviewsController);
+router.get('/createReview', newReviewController); //
+router.post('/store/review', storeReviewController); //
+router.get('/reviews', reviewsController); //
 
 module.exports = router

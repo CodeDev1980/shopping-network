@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <%- include('layouts/header') -%>
+  <body>
+    <%- include('layouts/navBar') -%>
+
+      <main>
+        <div class="container my-3 py-5">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-md-10">
+
+                    <h1 class="text-center font-weight-bold text-white mt-5 mb-3">Registration</h1>
+                    <h4>Already have an account? <a href="/login" class="font-weight-bold">Login</a>. </h4>
+                    <% if(errors != null && errors.length > 0){ %>
+                        <% for(i=0; i < errors.length; i++){ %>
+                            <p class="text-warning lead"><%= errors[i] %></p>
+                        <% } %>
+                    <% } %>
+                    <form action="/store/user" enctype="multipart/form-data" method="post">
+                        <input type="text" name="username" class="form-control mb-3" value="<%= username %>" placeholder="Username">
+                        <input type="password" name="password" class="form-control mb-3" value="<%= password %>" placeholder="Password">
+                        
+                        <textarea name="about" placeholder="Tell us about you" class="form-control mb-3" rows="10" spellcheck="true"></textarea>
+                        <button type="submit" class="btn btn-primary">register</button> <button type="reset" class="btn btn-outline-primary">clear</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+      </main>
+
+    <%- include('layouts/footer') -%>
+
+    <%- include('layouts/scripts') -%>
+  </body>
+</html>

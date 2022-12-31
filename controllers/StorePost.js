@@ -1,5 +1,5 @@
-const ArticlePost = require("../models/BlogPost");
-const path = require('path');
+const ArticlePost = require('../models/BlogPost');
+const path = require('path')
 
 module.exports = (req, res) => {
     let image = req.files.image;
@@ -7,7 +7,7 @@ module.exports = (req, res) => {
         await ArticlePost.create({
             ...req.body,
             image: '/uploads/' + image.name,
-            userid: req.session.userid
+            userid: req.session.userId
         })
         res.redirect('/blogs')
     })
