@@ -11,15 +11,21 @@
             </div>
             <div class="col-md-3 p-2 text-center">
                 <h4>Links</h4>
-                <a href="index.html" class="text-dark nav-link">home</a>
-                <a href="about.html" class="text-dark nav-link">about</a>
-                <a href="contact.html" class="text-dark nav-link">contact</a>
+                <a href="/" class="text-dark nav-link">home</a>
+                <a href="/about" class="text-dark nav-link">about</a>
+                <a href="/contact" class="text-dark nav-link">contact</a>
             </div>
             <div class="col-md-3 p-2 text-center">
                 <h4>Links</h4>
-                <a href="catalog.html" class="text-dark nav-link">catalog</a>
-                <a href="#" class="text-dark nav-link">facebook</a>
-                <a href="#" class="text-dark nav-link">linked</a>
+                <a href="/catalog" class="text-dark nav-link">catalog</a>
+                <% if(!loggedIn) { %> 
+                <a href="/articles" class="text-dark nav-link">articles</a>
+                <a href="/login" class="text-dark nav-link">accounts</a>
+                <% } %>
+                <% if(loggedIn) { %> 
+                <a href="/create" class="text-dark nav-link">New Post</a>
+                <a href="/logout" class="text-dark nav-link">Logout</a>
+                <% } %>
             </div>
         </div>
     </div>
